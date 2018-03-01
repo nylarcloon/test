@@ -1,0 +1,29 @@
+#include <stdio.h>
+int rdw(double x);
+int rup(double x);
+int rof(double x);
+double dec(double x);
+int main(void){
+    double a;
+    printf("a = "); scanf("%lf", &a);
+    printf("round down   = %d\n", rdw(a));
+    printf("round up     = %d\n", rup(a));
+    printf("round off    = %d\n", rof(a));
+    printf("decimal part = %f\n", dec(a));
+    return 0;
+}
+int rdw(double x){
+    return x;
+}
+int rup(double x){
+    x++;
+    return x;
+}
+int rof(double x){
+    x+=0.5;
+    return x;
+}
+double dec(double x){
+    x = x - (int)x;
+    return x;
+}
